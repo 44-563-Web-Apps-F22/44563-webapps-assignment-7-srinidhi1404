@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reaction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Srinidhi reaction timer</h2>
+  <br>
+  <div class="container border" style="background-color: aliceblue">
+    <p  class="font-weight-normal" id="target"> Your time</p>
+ </div>
+ <div class="container border" id="chests" style="background-color: antiquewhite;">
+     <p class="font-weight-normal" id="countdown">Count </p>
+
+ </div>
+ <br>
+ <div class="container">
+  <button type="button"   class="btn btn-primary"   onclick="startTime()">Start Timer</button>
+
+  <button type="button"   class="btn btn-info"   onclick="recordReact()">React Now</button>
+</div>
+
+  
+  
+  <script> 
+  var myTime = undefined  
+
+  function recordReact(){
+    myTime= Date.now() 
+    console.log(myTime)
+  }
+
+  function startTime(){
+    for(let i=0;i<4;i++){
+        setTimeout(()=>{
+      document.getElementById('countdown').innerHTML = "Count: " + i
+    }, (3-i)*1000)
+    }
+    setTimeout(()=>{
+     if(myTime==undefined){
+        document.getElementById('target').innerHTML="Too Slow"
+     }
+     else{
+        buttonTime = Date.now()
+        document.getElementById('target').innerHTML="Time was "+(buttonTime-myTime)
+     }
+    }, 3000)
+
+    
+  }
+  </script>
+
+</body>
+</html>
