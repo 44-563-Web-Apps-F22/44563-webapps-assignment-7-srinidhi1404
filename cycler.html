@@ -1,5 +1,14 @@
 <!DOCTYPE html>
-<html> <head> 
+<html> 
+    <head> 
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+        <title>Cycler</title>
     <style>
     .flex-container {
       display: flex;  flex-direction:row;
@@ -18,14 +27,14 @@
 		 background-color: green;
 	  }
 	}
+
     body{
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
+   
 </style>
-<title>Cycler</title>
+
 </head>
-
-
 
 <body>
 
@@ -35,7 +44,7 @@
 		  <div class="cycler">row item 2</div>  
 		  <div class="cycler">row item 3</div>  
 		</div>
-	
+	<br>
 	<p> Press the button to create an new element of type div and then add it to the container.
 		</p>
 
@@ -44,7 +53,9 @@
           </div>
 
           <br>
-		<button onclick="makeNewDiv()">Add value</button>
+		<button onclick="makeNewDiv()" class="btn btn-primary" >Add value</button>
+        <button onclick="get()" class="btn btn-info" >Get</button>
+        <button onclick="spin()" class="btn btn-seondary" >Spin</button>
 
         
 	
@@ -56,11 +67,39 @@
 		let element = document.createElement("div")
 		element.innerHTML = document.getElementById("inputElement").value 
 		element.style.color = "orange"
+        element.className = "cycler"
+
 
 		/* add it to the container */
 		let container = document.getElementById('target')
 		container.appendChild(element)
 		
 	}
+
+    function get(){ 
+        var cyclerItems= []
+        cyclerItems = document.getElementsByClassName("cycler")
+        length = cyclerItems.length
+
+        if(length>0){
+            cyclerItems[length-1].remove()
+        }
+
+    }
+
+    function spin(){
+        var cyclerItems= []
+        cyclerItems = document.getElementsByClassName("cycler")
+        length = cyclerItems.length
+
+        if(length>1){
+            var removedItem = cyclerItems[length-1]
+            document.getElementById('target').insertBefore(removedItem,cyclerItems[0])
+        }
+
+
+    }
+
+
 </script>
 </html>	
