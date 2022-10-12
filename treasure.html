@@ -81,44 +81,44 @@
                 <img id ="img-12" src="help.jpg" alt="treasureChest" height="150" width="150" onclick="help()">
             </div>
             <div >
-                <img id ="img-13" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(12)">
+                <img id ="img-13" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(13)">
             </div>
             <div >
-                <img id ="img-14" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(13)">
+                <img id ="img-14" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(14)">
             </div>
         </div>
         <div class="image-row d-flex">
             <div>
-                <img id ="img-15" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(14)">
+                <img id ="img-15" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(15)">
             </div>
             <div >
-                <img id ="img-16" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(15)">
+                <img id ="img-16" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(16)">
             </div>
             <div >
-                <img id ="img-17" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(16)">
+                <img id ="img-17" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(17)">
             </div>
             <div >
-                <img id ="img-18" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(17)">
+                <img id ="img-18" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(18)">
             </div>
             <div>
-                <img id ="img-19" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(18)">
+                <img id ="img-19" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(19)">
             </div>
         </div>   
         <div class="image-row d-flex">
             <div >
-                <img id ="img-20" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(19)">
+                <img id ="img-20" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(20)">
             </div class="col">
             <div>
-                <img id ="img-21" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(20)">
+                <img id ="img-21" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(21)">
             </div>
             <div>
-                <img id ="img-22" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(21)">
+                <img id ="img-22" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(22)">
             </div>
             <div>
-                <img id ="img-23" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(22)">
+                <img id ="img-23" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(23)">
             </div>
             <div>
-                <img id ="img-24" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(23)">
+                <img id ="img-24" src="chest.jpeg" alt="treasureChest" height="150" width="150" onclick="check(24)">
             </div>
         </div>
         </div>
@@ -132,26 +132,21 @@
     var score =0
     var lastCheck=12
     var treasureLocation=18
-    function check(position){
-        if(position<12)
-        var id = ids[position]
-        else if(position>=12)
-        var id = ids[position+1]
+    function check(position){      
+        var id = ids[position]       
         img = document.getElementById(id)
-        if(position+1==treasureLocation){        
+        if(position==treasureLocation){        
         img.src = "./treasure.jpg"
         }
         else
-        img.src = "./emojie.jpg"
-        
+        img.src = "./emojie.jpg"        
         chestCount++
         score = score+1
         document.getElementById("chests").innerHTML = "Number of chests checked is "+chestCount
         document.getElementById("score").innerHTML = "Score is "+score
-        if(position<12)
+        
         lastCheck = position
-        else if(position>=12)
-        lastCheck = position+1
+       
     }
 
     function help(){
