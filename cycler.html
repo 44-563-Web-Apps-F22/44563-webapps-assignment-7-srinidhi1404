@@ -68,14 +68,11 @@
 		element.innerHTML = document.getElementById("inputElement").value 
 		element.style.color = "orange"
         element.className = "cycler"
-
-
 		/* add it to the container */
 		let container = document.getElementById('target')
 		container.appendChild(element)
 		
 	}
-
     function get(){ 
         var cyclerItems= []
         cyclerItems = document.getElementsByClassName("cycler")
@@ -84,9 +81,7 @@
         if(length>0){
             cyclerItems[length-1].remove()
         }
-
-    }
-
+    }    
     function spin(){
         var cyclerItems= []
         cyclerItems = document.getElementsByClassName("cycler")
